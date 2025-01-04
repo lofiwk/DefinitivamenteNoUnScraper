@@ -12,10 +12,19 @@ def main():
     html = driver.page_source
     soup = BeautifulSoup(html, 'html.parser')
 
-    for link in soup.find_all('a'):
-        print(link.text.strip(), "-", link.get('href'))
+    # Extraer los datos de la página
+    misiones = soup.find_all('a')  # Ajusta según el HTML del sitio
+
+    # Guardar los datos en un archivo .txt
+    with open('outputs/misiones.txt', 'w', encoding='utf-8') as file:
+        for mision in misiones:
+            nombre = mision.text.strip()
+            enlace = mision.get('href')
+            if nombre and enlace:  # Evita líneas vacías
+                file.write(f"{nombre} - {enlace}\n")
 
     driver.quit()
+    print("Datos guardados en outputs/misiones.txt")
 
 if __name__ == "__main__":
     main()
