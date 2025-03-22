@@ -4,4 +4,4 @@ Este proyecto utiliza Python para scrapear información de una pagina pública, 
 
 Solo hay que clonar el repositorio, Instalar las dependencias desde `requirements.txt` y ejecutar el archivo python desde main
 
-besos
+No recomiendo ni me hago responsable de su uso.
